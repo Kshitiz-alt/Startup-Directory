@@ -1,14 +1,16 @@
 import { auth, signOut, signIn } from "@/auth"
-
 import Link from "next/link"
 
 
 const Navbar = async() => {
     const session = await auth()
   return (
-    <header className="bg-white px-5 py-5 p-12 shadow-sm ">
-        <nav className=" flex justify-between items-center h-[50px] text-black">
-            <Link href="/">Home</Link>
+    <header className= "w-full bg-white/70 px-5 py-5 p-12 shadow-sm fixed z-[10] ">
+        <nav className=" flex justify-between items-center h-[15px]  text-black">
+            <Link href="/">
+            {/* <Image className="rounded-full" src="/Logo.png" width={50} height={50} alt=""/> */}
+              Home
+            </Link>
             <div className="flex gap-[5em] justify-center items-center">
                 {session && session?.user ? (
                     <>
