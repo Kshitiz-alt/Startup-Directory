@@ -4,7 +4,7 @@ import Link from "next/link"
 
 const Navbar = async() => {
     const session = await auth()
-    console.log(session);
+    // console.log(session);
   return (
     <header className= "w-full bg-white/70 px-5 py-5 p-12 shadow-sm fixed z-[10] ">
         <nav className=" flex justify-between items-center h-[15px]  text-black">
