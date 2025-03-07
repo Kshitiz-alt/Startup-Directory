@@ -16,7 +16,7 @@ export function formatDate(date: string){
 
 //props identifiers when going through mapping
 export interface StartupCardType {
-    id: number;
+    _id: number;
     img: string;
     desc: string;
     name?: string;

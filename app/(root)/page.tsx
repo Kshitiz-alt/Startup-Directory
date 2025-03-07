@@ -1,13 +1,18 @@
 import { StartupCardType } from '@/utils';
 import Gridcards from '../junctions/Gridcards'
 import Searchbar from "../junctions/Searchbar";
-import { Grids } from "./props";
+// import { Grids } from "./props";
+import { client } from '@/sanity/lib/client';
+import { startup_queries } from '@/sanity/lib/queries';
 
 
 
 
-export default async function Home({ searchParams }: { searchParams: Promise<{ query?: string }> } ) {
+export default async function Home({ searchParams }: { searchParams: Promise<{ query?: string }> }) {
   const query = (await searchParams).query
+
+  const Grids = await client.fetch(startup_queries)
+  // console.log(JSON.stringify(Grids, null, 2))
 
   return (
     <>
@@ -28,8 +33,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ q
         <div className='grid grid-cols-3 md:grid-cols-2 max-sm:grid-cols-1 w-[80%] justify-self-center gap-[1em] text-black'>
           {Grids?.length > 0 ? (
             Grids.map((post:StartupCardType) =>(
-              <Gridcards key={post?.id} post={post}/>
-              
+                <Gridcards key={post._id} post={post}/>
             ))
           ):(
             <p> No Startups are listed here</p>

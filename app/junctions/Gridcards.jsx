@@ -23,7 +23,7 @@ const Gridcards = ({ post }) => {
       >
         <div className="flex justify-between p-4 mb-[-10px]">
           <p className="flex justify-center bg-gray-300 p-1 rounded-[5px]">
-            {formatDate(post.createdAt)}
+            {formatDate(post._createdAt)}
           </p>
           <div className="flex gap-[.3em]">
             <EyeIcon />
@@ -35,16 +35,16 @@ const Gridcards = ({ post }) => {
             <p>{post.author?.name}</p>
           </Link>
           <Link href={`/user/${post?.author?.id}`}>
-            <Image className="rounded-full" width={60} height={60} src="https://placehold.co/48x48" alt="placeholder" />
+            <Image className="rounded-full" width={60} height={60} src={post.author.image} alt="placeholder" />
           </Link>
         </div>
         <Link href={`/startup/${post.id}`}>
           <h3 className="pb-3 pl-3 font-bold relative top-[-2em] text-[1.2em]">{post?.title}</h3>
         </Link>
         <p className="p-3 relative top-[-3.3em]">{post.desc}</p>
-        <Image className="justify-self-center rounded-3xl p-4 relative top-[-4.2em]" width={450} height={400} src={post.img} alt="" />
-        <div className="relative top-[-4em] p-4 flex justify-between">
-          <Link href={`/?query=${post.category.toLowerCase()}`}> 
+        <Image className="justify-self-center rounded-3xl p-4 relative top-[-4.2em]" width={310} height={310} src={post.image} alt="" />
+        <div className="relative top-[-4em] max-sm:top-[-4.9em] p-4 flex justify-between">
+          <Link className="font-semibold" href={`/?query=${post.category.toLowerCase()}`}> 
             {post.category}
           </Link>
           <button className="rounded-2xl text-blue-500">
