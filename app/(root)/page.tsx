@@ -1,4 +1,4 @@
-import { StartupCardType } from '@/utils';
+
 import Gridcards from '../junctions/Gridcards'
 import Searchbar from "../junctions/Searchbar";
 // import { Grids } from "./props";

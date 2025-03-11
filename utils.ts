@@ -15,14 +15,14 @@ export function formatDate(date: string){
 }
 
 //props identifiers when going through mapping
-export interface StartupCardType {
-    _id: number;
-    img: string;
-    desc: string;
-    name?: string;
-    title?: string;
-    createdAt?: Date;
-    Views?: number;
-    author?: { id: number , name: string };
-    category?: string;
-  }
+// export interface StartupCardType {
+//     _id: number;
+//     img: string;
+//     desc: string;
+//     name?: string;
+//     title?: string;
+//     createdAt?: Date;
+//     Views?: number;
+//     author?: { id: number , name: string };
+//     category?: string;
+//   }
