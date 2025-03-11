@@ -1,5 +1,5 @@
 
-import Gridcards from '../junctions/Gridcards'
+import Gridcards, {StartupCardType} from '../junctions/Gridcards'
 import Searchbar from "../junctions/Searchbar";
 // import { Grids } from "./props";
 import { client } from '@/sanity/lib/client';
