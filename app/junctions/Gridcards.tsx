@@ -7,7 +7,6 @@ import { useRef } from "react";
 import { motion,  useInView } from "framer-motion";
 import { EyeIcon } from "lucide-react";
 import { Author, Startup } from "@/sanity/types";
-// import { div } from "framer-motion/client";
 
 export type StartupCardType = Omit<Startup , "author"> & {author?:Author}
 
