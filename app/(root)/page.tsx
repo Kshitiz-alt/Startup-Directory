@@ -6,6 +6,7 @@ import Searchbar from "../junctions/Searchbar";
 // import { client } from '@/sanity/lib/client';
 import { startup_Queries } from '@/sanity/lib/queries';
 import { Bird } from 'lucide-react';
+import { auth } from '@/auth';
 
 
 
@@ -13,6 +14,8 @@ import { Bird } from 'lucide-react';
 export default async function Home({ searchParams }: { searchParams: Promise<{ query?: string }> }) {
   const query = (await searchParams).query
   const params = { search: query || null }
+  const session = await auth()
+  console.log(session?.id)
 
   // const Grids = await client.fetch(startup_queries)
   const { data: Grids } = await sanityFetch({ query: startup_Queries, params })

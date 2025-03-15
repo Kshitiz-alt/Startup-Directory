@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { formatDate } from "@/utils";
+import { formatDate } from "@/lib/utilsAndValidations";
 import { useRef } from "react";
 import { motion,  useInView } from "framer-motion";
 import { EyeIcon } from "lucide-react";
@@ -39,7 +39,7 @@ const authorName = author?.name;
             <p>{authorName}</p>
           </Link>
           <Link href={`/user/${authorId}`}>
-            <Image className="rounded-full" width={60} height={60} src={authorImage ?? "https://placehold.co/48x48"} alt="placeholder" />
+            <Image className="rounded-full w-auto h-auto" width={60} height={60} src={authorImage ?? "https://placehold.co/48x48"} alt="placeholder" />
           </Link>
         </div>
         <Link href={`/startup/${post._id}`}>
